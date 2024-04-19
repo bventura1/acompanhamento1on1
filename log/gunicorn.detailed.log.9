@@ -1,0 +1,74 @@
+[2024-04-19 20:13:51,218] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:14:31,331] ERROR log_exception() L1449 Exception on /atividades [GET] - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py L1449
+Traceback (most recent call last):
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_openapi3\scaffold.py", line 96, in view_func
+    func_kwargs = _validate_request(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_openapi3\request.py", line 135, in _validate_request
+    _validate_query(query, func_kwargs)
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_openapi3\request.py", line 42, in _validate_query
+    func_kwargs.update({"query": query.model_validate(obj=query_dict)})
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 532, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\new_test_path\desenvolvimento-full-stack\desenvolvimento-full-stack-basico\aula-3\meu_app_api\schemas\atividades.py", line 28, in __init__
+    self.colaborador = colaborador
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 835, in __setattr__
+    self.__pydantic_fields_set__.add(name)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 789, in __getattr__
+    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AtividadesBuscaSchema' object has no attribute '__pydantic_fields_set__'
+[2024-04-19 20:14:31,386] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:14:31] "[35m[1mGET /atividades HTTP/1.1[0m" 500 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:18:32,856] INFO _log() L224   * Detected change in 'C:\\Users\\Saulo Canto\\new_test_path\\desenvolvimento-full-stack\\desenvolvimento-full-stack-basico\\aula-3\\meu_app_api\\schemas\\atividades.py', reloading - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:18:32,992] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:18:35,394] INFO _log() L224   * Detected change in 'C:\\Users\\Saulo Canto\\new_test_path\\desenvolvimento-full-stack\\desenvolvimento-full-stack-basico\\aula-3\\meu_app_api\\schemas\\atividades.py', reloading - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:18:35,505] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:18:41,883] INFO _log() L224   * Detected change in 'C:\\Users\\Saulo Canto\\new_test_path\\desenvolvimento-full-stack\\desenvolvimento-full-stack-basico\\aula-3\\meu_app_api\\schemas\\atividades.py', reloading - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:18:42,002] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:18:48,378] INFO _log() L224   * Detected change in 'C:\\Users\\Saulo Canto\\new_test_path\\desenvolvimento-full-stack\\desenvolvimento-full-stack-basico\\aula-3\\meu_app_api\\schemas\\atividades.py', reloading - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:18:48,480] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:18:57,862] INFO _log() L224   * Detected change in 'C:\\Users\\Saulo Canto\\new_test_path\\desenvolvimento-full-stack\\desenvolvimento-full-stack-basico\\aula-3\\meu_app_api\\schemas\\atividades.py', reloading - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:18:57,966] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:19:17,386] INFO _log() L224   * Detected change in 'C:\\Users\\Saulo Canto\\new_test_path\\desenvolvimento-full-stack\\desenvolvimento-full-stack-basico\\aula-3\\meu_app_api\\schemas\\atividades.py', reloading - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:19:17,503] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:19:18,858] INFO _log() L224   * Detected change in 'C:\\Users\\Saulo Canto\\new_test_path\\desenvolvimento-full-stack\\desenvolvimento-full-stack-basico\\aula-3\\meu_app_api\\schemas\\atividades.py', reloading - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:19:18,980] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:19:22,334] INFO _log() L224   * Detected change in 'C:\\Users\\Saulo Canto\\new_test_path\\desenvolvimento-full-stack\\desenvolvimento-full-stack-basico\\aula-3\\meu_app_api\\schemas\\atividades.py', reloading - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:19:22,441] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:19:28,409] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:19:28] "[35m[1mGET /atividades_all HTTP/1.1[0m" 500 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:19:28,430] ERROR _log() L224  Error on request:
+Traceback (most recent call last):
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 335, in run_wsgi
+    execute(self.server.app)
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\serving.py", line 322, in execute
+    application_iter = app(environ, start_response)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\new_test_path\desenvolvimento-full-stack\desenvolvimento-full-stack-basico\aula-3\meu_app_api\app.py", line 9, in <module>
+    from schemas import *
+  File "C:\Users\Saulo Canto\new_test_path\desenvolvimento-full-stack\desenvolvimento-full-stack-basico\aula-3\meu_app_api\schemas\__init__.py", line 2, in <module>
+    from schemas.atividades import AtividadesSchema, AtividadesBuscaSchema, AtividadesViewSchema, \
+  File "C:\Users\Saulo Canto\new_test_path\desenvolvimento-full-stack\desenvolvimento-full-stack-basico\aula-3\meu_app_api\schemas\atividades.py", line 19
+    colaborador: str self 
+                     ^^^^
+SyntaxError: invalid syntax - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:19:29,863] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:19:29] "[35m[1mGET /atividades_all HTTP/1.1[0m" 500 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:19:33,687] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:19:33] "[35m[1mGET /atividades HTTP/1.1[0m" 500 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 

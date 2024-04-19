@@ -1,0 +1,90 @@
+[2024-04-19 20:20:13,452] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:20:44,947] INFO _log() L224   * Detected change in 'C:\\Users\\Saulo Canto\\new_test_path\\desenvolvimento-full-stack\\desenvolvimento-full-stack-basico\\aula-3\\meu_app_api\\schemas\\atividades.py', reloading - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:20:45,077] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:20:48,196] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:20:48] "GET /atividades_all HTTP/1.1" 200 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:20:49,713] ERROR log_exception() L1449 Exception on /atividades [GET] - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py L1449
+Traceback (most recent call last):
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_openapi3\scaffold.py", line 96, in view_func
+    func_kwargs = _validate_request(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_openapi3\request.py", line 135, in _validate_request
+    _validate_query(query, func_kwargs)
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_openapi3\request.py", line 42, in _validate_query
+    func_kwargs.update({"query": query.model_validate(obj=query_dict)})
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 532, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\new_test_path\desenvolvimento-full-stack\desenvolvimento-full-stack-basico\aula-3\meu_app_api\schemas\atividades.py", line 28, in __init__
+    self.colaborador = colaborador
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 835, in __setattr__
+    self.__pydantic_fields_set__.add(name)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 789, in __getattr__
+    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AtividadesBuscaSchema' object has no attribute '__pydantic_fields_set__'
+[2024-04-19 20:20:49,727] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:20:49] "[35m[1mGET /atividades HTTP/1.1[0m" 500 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:20:50,249] ERROR log_exception() L1449 Exception on /atividades [GET] - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py L1449
+Traceback (most recent call last):
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1519, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_cors\extension.py", line 165, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1517, in full_dispatch_request
+    rv = self.dispatch_request()
+         ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask\app.py", line 1503, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_openapi3\scaffold.py", line 96, in view_func
+    func_kwargs = _validate_request(
+                  ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_openapi3\request.py", line 135, in _validate_request
+    _validate_query(query, func_kwargs)
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\flask_openapi3\request.py", line 42, in _validate_query
+    func_kwargs.update({"query": query.model_validate(obj=query_dict)})
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 532, in model_validate
+    return cls.__pydantic_validator__.validate_python(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\new_test_path\desenvolvimento-full-stack\desenvolvimento-full-stack-basico\aula-3\meu_app_api\schemas\atividades.py", line 28, in __init__
+    self.colaborador = colaborador
+    ^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 835, in __setattr__
+    self.__pydantic_fields_set__.add(name)
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\pydantic\main.py", line 789, in __getattr__
+    return super().__getattribute__(item)  # Raises AttributeError if appropriate
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'AtividadesBuscaSchema' object has no attribute '__pydantic_fields_set__'
+[2024-04-19 20:20:50,260] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:20:50] "[35m[1mGET /atividades HTTP/1.1[0m" 500 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:20:53,428] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:20:53] "[35m[1mGET /atividades HTTP/1.1[0m" 500 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:20:59,518] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:20:59] "GET /atividades_all HTTP/1.1" 200 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:20:59,521] INFO _log() L224   * Detected change in 'C:\\Users\\Saulo Canto\\new_test_path\\desenvolvimento-full-stack\\desenvolvimento-full-stack-basico\\aula-3\\meu_app_api\\schemas\\atividades.py', reloading - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:20:59,670] INFO _log() L224   * Restarting with stat - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:21:00,799] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:21:00] "GET /atividades HTTP/1.1" 200 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:21:02,582] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:21:02] "GET /atividades_all HTTP/1.1" 200 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:21:12,373] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:21:12] "GET /atividades HTTP/1.1" 200 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
+[2024-04-19 20:37:46,609] INFO _log() L224  192.168.0.40 - - [19/Apr/2024 20:37:46] "GET /atividades_all HTTP/1.1" 200 - - call_trace=C:\Users\Saulo Canto\AppData\Local\Programs\Python\Python312\Lib\site-packages\werkzeug\_internal.py L224 
