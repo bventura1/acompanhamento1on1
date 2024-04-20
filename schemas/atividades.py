@@ -4,7 +4,7 @@ from model.atividades import Atividades
 
 
 class AtividadesSchema(BaseModel):
-    """ Define como um novo produto a ser inserido deve ser representado
+    """ Define como uma nova atividade a ser inserido deve ser representada
     """
     id: int = 1
     tarefa: str = "Marcar Reunião"
@@ -14,7 +14,7 @@ class AtividadesSchema(BaseModel):
 
 class AtividadesBuscaSchema(BaseModel):
     """ Define como deve ser a estrutura que representa a busca. Que será
-        feita apenas com base no nome do produto.
+        feita apenas com base no nome do colaborador.
     """
     colaborador: str = "Bruno"
 
@@ -22,14 +22,14 @@ class AtividadesBuscaSchema(BaseModel):
 
 
 class ListagemAtividadesSchema(BaseModel):
-    """ Define como uma listagem de produtos será retornada.
+    """ Define como uma listagem de atividades será retornada.
     """
     atividades:List[AtividadesSchema]
 
 
 def apresenta_atividades(atividadess: List[Atividades]):
-    """ Retorna uma representação do produto seguindo o schema definido em
-        ProdutoViewSchema.
+    """ Retorna uma representação de atividades seguindo o schema definido em
+        AtividadesViewSchema.
     """
     result = []
     for atividades in atividadess:
@@ -44,14 +44,12 @@ def apresenta_atividades(atividadess: List[Atividades]):
 
 
 class AtividadesViewSchema(BaseModel):
-    """ Define como um produto será retornado: produto + comentários.
+    """ Define como atividades serão retornadas
     """
     id: int = 1
     tarefa: str = "Marcar reunião"
     colaborador: str = "Alberto"
     status: str = "Status"
-#    total_cometarios: int = 1
- #   comentarios:List[ComentarioSchema]
 
 
 class AtividadesDelSchema(BaseModel):
@@ -62,8 +60,8 @@ class AtividadesDelSchema(BaseModel):
     nome: str
 
 def apresenta_atividades(atividades: Atividades):
-    """ Retorna uma representação do produto seguindo o schema definido em
-        ProdutoViewSchema.
+    """ Retorna uma representação de atividades seguindo o schema definido em
+        AtividadesViewSchema.
     """
     return {
         "id": atividades.id,
