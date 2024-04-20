@@ -4,6 +4,9 @@ Este pequeno projeto faz parte do material diático da Disciplina **Desenvolvime
 
 O objetivo aqui é ilutsrar o conteúdo apresentado ao longo das três aulas da disciplina.
 
+## Objetivo do projeto
+Implementar funcionalmente as necessidades básicas para o acompanhamento das reuniões com a equipe. A listagem oferece a visão de como estão os temas, e o filtro por colaborador permite uma melhor organização do que será foco em cada agenda com o time.
+
 ---
 ## Como executar 
 
