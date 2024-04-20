@@ -48,8 +48,7 @@ def add_atividade(form: AtividadesSchema):
 
     except IntegrityError as e:
         # como a duplicidade do nome é a provável razão do IntegrityError
-        #error_msg = "Produto de mesmo nome já salvo na base :/"
-        #logger.warning(f"Erro ao adicionar produto '{produto.nome}', {error_msg}")
+
         return {"mesage": error_msg}, 409
 
     except Exception as e:
@@ -87,9 +86,7 @@ def get_atividades_all():
 @app.get('/atividades', tags=[atividades_tag],
          responses={"200": ListagemAtividadesSchema, "404": ErrorSchema})
 def get_atividades(query: AtividadesBuscaSchema):
-    """Faz a busca por um Produto a partir do id do produto
-
-    Retorna uma representação dos produtos e comentários associados.
+    """Faz a busca das atividades a partir de um filtro por Colaborador
     """
     colaborador = query.colaborador
     logger.debug(f"Coletando dados sobre produto #{colaborador}")
@@ -114,24 +111,20 @@ def get_atividades(query: AtividadesBuscaSchema):
         })
     
     return jsonify(atividades_json)
-    # else:
-    #     # se o produto não foi encontrado
-    #     error_msg = "Produto não encontrado na base :/"
-    #     logger.warning(f"Erro ao buscar produto '{colaborador}', {error_msg}")
-    #     return {"mesage": error_msg}, 404
+
  
 
 
 @app.delete('/atividades', tags=[atividades_tag],
             responses={"200": AtividadesDelSchema, "404": ErrorSchema})
 def del_atividades(query: AtividadesBuscaSchema):
-    """Deleta um Produto a partir do nome de produto informado
+    """Deleta uma Tarefa a partir de seleção
 
     Retorna uma mensagem de confirmação da remoção.
     """
     atividades_tarefa = unquote(unquote(query.tarefa))
     print(atividades_tarefa)
-    logger.debug(f"Deletando dados sobre produto #{atividades_tarefa}")
+    logger.debug(f"Deletando dados  #{atividades_tarefa}")
     # criando conexão com a base
     session = Session()
     # fazendo a remoção
@@ -140,12 +133,12 @@ def del_atividades(query: AtividadesBuscaSchema):
 
     if count:
         # retorna a representação da mensagem de confirmação
-        logger.debug(f"Deletado produto #{atividades_tarefa}")
+        logger.debug(f"Deletada tarefa #{atividades_tarefa}")
         return {"mesage": "Produto removido", "id": atividades_tarefa}
     else:
-        # se o produto não foi encontrado
-        error_msg = "Produto não encontrado na base :/"
-        logger.warning(f"Erro ao deletar produto #'{atividades_tarefa}', {error_msg}")
+        # se a tarefa não existe
+        error_msg = "Tarefa não encontrada na base :/"
+        logger.warning(f"Erro ao deletar tarefa #'{atividades_tarefa}', {error_msg}")
         return {"mesage": error_msg}, 404
     
 
